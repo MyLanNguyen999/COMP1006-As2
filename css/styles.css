@@ -24,3 +24,8 @@ thead {
 td {
     border: 1px solid lightgrey;
 }
+
+/* * add-page.php */
+.newPage {
+    width: 80%;
+}

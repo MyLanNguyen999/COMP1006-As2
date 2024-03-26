@@ -30,5 +30,6 @@ if(is_numeric($userId)) {
     catch (Exception $err) {
         header('location:error.php');
         exit();
+    }
 }
 ?>

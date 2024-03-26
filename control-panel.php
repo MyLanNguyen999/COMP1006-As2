@@ -7,8 +7,19 @@ include('shared/header.php');
    
 <li>
     <a href="admin.php"> Administrators </a>
-<li>
+</li>
 
+<li>
+    <a href="#"> Pages </a>
+</li>
+
+<li>
+    <a href="#"> Logo </a>
+</li>
+
+<li>
+    <a href="#"> Public Site </a>
+</li>
 </main>
 </body>
 </html>
