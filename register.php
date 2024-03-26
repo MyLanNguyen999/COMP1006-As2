@@ -16,6 +16,12 @@ include('shared/header.php');
     <!-- // * Create form for registration -->
     <form method="post" action="save-registration.php">
         <fieldset>
+            <label for="firstName">First Name: *</label>
+            <input name="firstName" id="firstName" required type="text" placeholder="John" />
+            <label for="lastName">Last Name: *</label>
+            <input name="lastName" id="lastName" required type="text" placeholder="Doe" />
+        </fieldset>
+        <fieldset>
             <label for="username">Username: *</label>
             <input name="username" id="username" required type="email" placeholder="email@email.com" />
         </fieldset>

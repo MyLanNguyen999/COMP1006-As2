@@ -3,6 +3,8 @@ $title = 'Save Registration';
 include ('shared.header.php');
 
 //* Capture form inputs
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $confirm = $_POST['confirm'];
@@ -10,6 +12,14 @@ $ok = true;
 
 //* Validate form inputs
     // * make sure it is not empty
+     if (empty($firstName)) {
+        echo 'First Name is required <br/>';
+        $ok = false;
+    }
+     if (empty($lastName)) {
+        echo 'Last Name is required <br/>';
+        $ok = false;
+    }
     if (empty($username)) {
         echo 'Username is required <br/>';
         $ok = false;
@@ -48,10 +58,12 @@ try {
         }
 
         //* Insert the value after checking
-        $sql = "INSERT INTO adminUsers (username, password) VALUES (:username, :password)";
+        $sql = "INSERT INTO adminUsers (username, password, firstName, lastName) VALUES (:username, :password, :firstName, :lastName)";
         $cmd = $db -> prepare($sql);
         $cmd -> bindParam(':username', $username, PDO::PARAM_STR, 50);
         $cmd -> bindParam(':password', $passwordHash, PDO::PARAM_STR, 255);
+        $cmd -> bindParam(':firstName', $firstName, PDO::PARAM_STR, 50);
+        $cmd -> bindParam(':lastName', $lastName, PDO::PARAM_STR, 50);
         $cmd -> execute();
 
     //* Disconnect
