@@ -1,0 +1,26 @@
+@charset "utf-8";
+* {
+    box-sizing: border-box;
+}
+html {
+    width: 40%;
+    margin: 0 auto;
+}
+body {
+
+}
+table {
+    width: 100%;
+    border: 1.5px solid #59A673;
+    margin: 0 auto;
+    text-align: left;
+}
+
+thead {
+    background-color: #59A673;
+    color: white;
+}
+
+td {
+    border: 1px solid lightgrey;
+}

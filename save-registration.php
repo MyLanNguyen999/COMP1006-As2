@@ -1,4 +1,6 @@
 <?php
+$title = 'Save Registration';
+include ('shared.header.php');
 
 //* Capture form inputs
 $username = $_POST['username'];
@@ -27,36 +29,46 @@ $ok = true;
 //* Hash the pw
 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-//* Connect to DB, check for duplication and insert the value
-include('shared/db.php');
-    //* Check for duplication
-    $sql = "SELECT * FROM adminUsers WHERE username = :username";
-    $cmd = $db->prepare($sql);
-    $cmd -> bindParam(':username', $username, PDO::PARAM_STR, 50);
-    $cmd -> execute();
-    $adminUsers = $cmd->fetchAll();
+// * error handling
+try {
+    //* Connect to DB, check for duplication and insert the value
+    include('shared/db.php');
+        //* Check for duplication
+        $sql = "SELECT * FROM adminUsers WHERE username = :username";
+        $cmd = $db->prepare($sql);
+        $cmd -> bindParam(':username', $username, PDO::PARAM_STR, 50);
+        $cmd -> execute();
+        $adminUsers = $cmd->fetchAll();
 
-    //* if username already existed, redirect to registration page
-    if(!empty($adminUsers)) {
-        $db = null;
-        header('location:register.php?duplicate=true');
-        exit();
-    }
+        //* if username already existed, redirect to registration page
+        if(!empty($adminUsers)) {
+            $db = null;
+            header('location:register.php?duplicate=true');
+            exit();
+        }
 
-    //* Insert the value after checking
-    $sql = "INSERT INTO adminUsers (username, password) VALUES (:username, :password)";
-    $cmd = $db -> prepare($sql);
-    $cmd -> bindParam(':username', $username, PDO::PARAM_STR, 50);
-    $cmd -> bindParam(':password', $passwordHash, PDO::PARAM_STR, 255);
-    $cmd -> execute();
+        //* Insert the value after checking
+        $sql = "INSERT INTO adminUsers (username, password) VALUES (:username, :password)";
+        $cmd = $db -> prepare($sql);
+        $cmd -> bindParam(':username', $username, PDO::PARAM_STR, 50);
+        $cmd -> bindParam(':password', $passwordHash, PDO::PARAM_STR, 255);
+        $cmd -> execute();
 
-//* Disconnect
-$db = null;
+    //* Disconnect
+    $db = null;
 
-//* Confirmation
-echo 'Sucessful admin registration.'
+    //* Confirmation
+    echo 'Sucessful admin registration.';
+}
+catch (Exception $err) {
+    header('location:error.php');
+    exit();
+}
 
-// * Username: monday@gc.ca
+// * Username: monday@gc.ca, tuesday@gc.ca, wednesday@gc.ca
 // * PW: Test123456
 
 ?>
+</main>
+</body>
+</html>
