@@ -24,7 +24,6 @@ try {
     // * check for duplication
     $sql = "SELECT * FROM adminPages WHERE pageId = :pageId";
     $cmd = $db->prepare($sql);
-    // $cmd -> bindParam(':title', $title, PDO::PARAM_STR, 100);
     $cmd -> bindParam(':pageId', $pageId, PDO::PARAM_INT);
     $cmd -> execute();
     $adminPages = $cmd->fetchAll();
