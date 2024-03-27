@@ -29,3 +29,12 @@ td {
 .newPage {
     width: 80%;
 }
+
+/* * logo in header.php */
+header {
+    display: flex;
+    justify-content: space-between;
+}
+#logo {
+    height: 80px;
+}

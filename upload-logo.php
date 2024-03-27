@@ -1,4 +1,6 @@
 <?php
+// * add auth.php
+include('shared/auth.php');
 $title = 'Upload Logo';
 include('shared/header.php');
 

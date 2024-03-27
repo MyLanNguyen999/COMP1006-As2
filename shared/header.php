@@ -8,7 +8,11 @@
     <title><?php echo $title ?></title>
 </head>
 <body>
-    <h1> COMP 1006 - As2 </h1>
+    <header>
+        <img src="./img/logo.png" alt="logo" id="logo"/>
+        <h1> COMP 1006 - As2 </h1>
+    </header>
+    
     <ul>
         <!-- <li> 
             <a href="register.php"> Register </a>
