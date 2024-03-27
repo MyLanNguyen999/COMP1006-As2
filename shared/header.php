@@ -12,7 +12,7 @@
         <?php
         include('./get-logo-path.php');
         ?>
-        <h1> COMP 1006 - As2 </h1>
+        <!-- <h1> COMP 1006 - As2 </h1> -->
     </header>
     
     <ul>
@@ -30,6 +30,10 @@
             if (!empty($_SESSION['username'])) {
                 echo 
                     '<li>
+                        <a href="index.php"> Home </a>
+                    </li>
+                    
+                    <li>
                         <a href="control-panel.php"> Control Panel</a>
                     </li>
 
