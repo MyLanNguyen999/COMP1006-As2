@@ -14,7 +14,7 @@ include('shared/header.php');
 </li>
 
 <li>
-    <a href="#"> Logo </a>
+    <a href="upload-logo.php"> Logo </a>
 </li>
 
 <li>
