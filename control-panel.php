@@ -10,7 +10,7 @@ include('shared/header.php');
 </li>
 
 <li>
-    <a href="#"> Pages </a>
+    <a href="pages.php"> Pages </a>
 </li>
 
 <li>

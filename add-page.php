@@ -8,10 +8,14 @@ include('shared/header.php');
 <h2> Add a New Page </h2>
 
 <section class="newPage">
-    <label for="pageTitle"> Title: * </label>
-    <input name="pageTitle" id="pageTitle" required/>
-    </br>
-    <label for="pageContent"> Content: * </label>
-    </br>
-    <textarea name="pageContent" id="pageContent" required rows="10" cols="60"> </textarea>
+    <form method="post" action="save-page.php">
+        <label for="title"> Title: * </label>
+        <input name="title" id="title" required/>
+        </br>
+        <label for="content"> Content: * </label>
+        </br>
+        <textarea name="content" id="content" required rows="10" cols="60"> </textarea>
+        <button> Save Content </button>
+</form>
+
 </section>
