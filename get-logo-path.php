@@ -5,7 +5,7 @@ session_start();
 include('shared/auth.php');
 
 
-$title = 'Logo Path';
+$title = 'Get Logo Path';
 
 $logoSrcDefault = './img/logo.png';
 $imgTag1 = '<img src="';

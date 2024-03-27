@@ -1,4 +1,5 @@
 <?php
+$title = 'Home';
 include('shared/header.php');
 ?>
 <h1> Assignment 2 </h1>

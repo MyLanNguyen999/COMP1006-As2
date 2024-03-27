@@ -33,6 +33,7 @@ echo
             if (!empty($_SESSION['username'])){
                 echo '<th> Delete </th>';
             }
+        echo '<th> View </th>';
         echo '</thead>';
     foreach ($titles as $title) {
         echo 
@@ -46,6 +47,7 @@ echo
                     <a href="delete-page.php?pageId='.$title['pageId'].' " onclick="return confirmDelete();"> Delete </a> 
                 </td>
             ';
+        echo '<td> <a target="_blank" href="show-page.php?pageId='.$title['pageId'].'  "> View </a> </td>';
     }
     echo '</tr>';
     echo '</table>';
