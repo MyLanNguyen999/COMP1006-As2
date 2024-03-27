@@ -1,17 +1,22 @@
 <?php
+session_start();
 // * add auth.php
 include('shared/auth.php');
 
 $title = 'Saving New Logo';
 include('shared/header.php');
 
+// * initiate new var for new logo saves status
+$newLogoSaved = false;
+
 // * process logo
 if(($_FILES['logo']['size'] > 0)) {
     $logoName = $_FILES['logo']['name'];
     $finalName = session_id(). '-' . $logoName;
+    // echo $finalName .' <br/>';
 
     // * file size
-    $size = $_FILES['logo']['size'];
+    // $size = $_FILES['logo']['size'];
 
     // * temp location on server
     $tmp_name = $_FILES['logo']['tmp_name'];
@@ -24,8 +29,17 @@ if(($_FILES['logo']['size'] > 0)) {
         echo 'Logo must be a .jpg or .png';
     }
     else {
-        // * create a new folder and save the new logo
-        move_uploaded_file($tmp_name, 'img/uploads/' . $finalName);
+        // * save the new logo under folder "uploads"
+        // move_uploaded_file($tmp_name, 'img/uploads/' . $finalName);
+        if(move_uploaded_file($_FILES['logo']['tmp_name'], 'img/uploads/' . $finalName)) {
+        $newLogoSaved = true;
+
+        // * store $finalName in a session var
+        $_SESSION['finalName'] = $finalName;
+
+        // $newLogo = '<img src="./img/uploads/'.$finalName.'" alt="logo" id="logo">';
+        // echo $newLogo;
+        }
     }
 }
 
@@ -47,13 +61,15 @@ try {
     $db = null;
 
     // * message on screen
-    echo 'New Logo Saved';
+    echo '</br> New Logo Saved';
+    // echo '<img src="./img/uploads/'.$finalName.'" alt="logo" id="logo">';
+    // $newLogo = '<img src="./img/uploads/'.$finalName.'" alt="logo" id="logo">';
+    // echo '</br> <a href="control-panel.php"/> Control Panel </a> </br>';
+    // echo $newLogo;
 }
-catch (Exception $err) {
+catch (exception $err) {
     header('location:error.php');
     exit();
 }
+
 ?>
-</main>
-</body>
-</html>

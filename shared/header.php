@@ -9,7 +9,9 @@
 </head>
 <body>
     <header>
-        <img src="./img/logo.png" alt="logo" id="logo"/>
+        <?php
+        include('./get-logo-path.php');
+        ?>
         <h1> COMP 1006 - As2 </h1>
     </header>
     
@@ -50,9 +52,5 @@
                 </li>';
             }
             ?>
-        
-        <li> 
-            Page 3
-        </li>
     </ul>    
 <main>
