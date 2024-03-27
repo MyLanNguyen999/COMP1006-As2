@@ -38,11 +38,11 @@ echo
             '<tr>
                 <td> ' . $title['title'] . ' </td>
                 <td> 
-                    <a href="edit-page.php?pageId='.$title['title'].' "> Edit </a> 
+                    <a href="edit-page.php?pageId='.$title['pageId'].' "> Edit </a> 
                 </td>
 
                 <td> 
-                    <a href="delete-page.php?pageId='.$title['title'].' " onclick="return confirmDelete();"> Delete </a> 
+                    <a href="delete-page.php?pageId='.$title['pageId'].' " onclick="return confirmDelete();"> Delete </a> 
                 </td>
             ';
     }
