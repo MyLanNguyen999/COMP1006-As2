@@ -38,3 +38,8 @@ header {
 #logo {
     height: 80px;
 }
+
+/* * Nav Style */
+li {
+    list-style: none;
+}

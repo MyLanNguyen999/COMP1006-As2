@@ -27,6 +27,7 @@
         ?>
         
             <?php
+            
             if (!empty($_SESSION['username'])) {
                 echo 
                     '<li>
@@ -35,9 +36,11 @@
                     
                     <li>
                         <a href="control-panel.php"> Control Panel</a>
-                    </li>
+                    </li>';
 
-                    <li>
+                    include ('list-page.php');
+
+                   echo '<li>
                         <a href="logout.php">Logout</a>
                     </li>
 
@@ -46,31 +49,37 @@
                     </li>';
              }
             else {
-              echo 
-                '<li>
+                echo 
+                    '<li>
+                            <a href="index.php"> Home </a>
+                    </li>';
+
+                include ('list-page.php');
+                
+                echo '<li>
                     <a href="register.php">Register</a>
-                </li>
+                    </li>
 
-                <li>
-                    <a href="login.php">Login</a>
-                </li>
-                ';
+                    <li>
+                        <a href="login.php">Login</a>
+                    </li>
+                    ';
             }
 
-            // * retrieve the list of the pages
-            include('shared/db.php');
-            $sql = "SELECT pageId, title FROM adminPages";
-            $cmd = $db->prepare($sql);
-            $cmd->execute();
-            $pages = $cmd->fetchAll();
+            // // * retrieve the list of the pages
+            // include('shared/db.php');
+            // $sql = "SELECT pageId, title FROM adminPages";
+            // $cmd = $db->prepare($sql);
+            // $cmd->execute();
+            // $pages = $cmd->fetchAll();
 
-            // * display each page in the navigation
-            foreach ($pages as $page) {
-                echo '<li><a href="show-page.php?pageId=' . $page['pageId'] . '">' . $page['title'] . '</a></li>';
-            }
+            // // * display each page in the navigation
+            // foreach ($pages as $page) {
+            //     echo '<li><a href="show-page.php?pageId=' . $page['pageId'] . '">' . $page['title'] . '</a></li>';
+            // }
 
-        // Disconnect from the database
-        $db = null;
+            // // * disconnect
+            // $db = null;
             ?>
     </ul>    
 <main>
