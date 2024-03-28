@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-
+        
         <?php
         include('./get-logo-path.php');
         ?>
