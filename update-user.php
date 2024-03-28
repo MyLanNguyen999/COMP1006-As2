@@ -1,10 +1,10 @@
 <?php
-include('shared/auth.php');
 
-$title = 'Save Registration';
+$title = 'Update Current User';
 include ('shared/header.php');
 
 //* Capture form inputs
+$userId = $_POST['userId'];
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $username = $_POST['username'];
@@ -41,38 +41,32 @@ $ok = true;
 //* Hash the pw
 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
+if ($ok == true){
 // * error handling
 try {
     //* Connect to DB, check for duplication and insert the value
     include('shared/db.php');
-        //* Check for duplication
-        $sql = "SELECT * FROM adminUsers WHERE username = :username";
-        $cmd = $db->prepare($sql);
-        $cmd -> bindParam(':username', $username, PDO::PARAM_STR, 50);
-        $cmd -> execute();
-        $adminUsers = $cmd->fetchAll();
 
-        //* if username already existed, redirect to registration page
-        if(!empty($adminUsers)) {
-            $db = null;
-            header('location:register.php?duplicate=true');
-            exit();
-        }
-
-        //* Insert the value after checking
-        $sql = "INSERT INTO adminUsers (username, password, firstName, lastName) VALUES (:username, :password, :firstName, :lastName)";
+        //* update value after checking
+        $sql = "UPDATE adminUsers SET firstname = :firstName, lastName = :lastName, username = :username, password = :password WHERE userId = :userId ";
+        // * prepare sql
         $cmd = $db -> prepare($sql);
+
+        // *map the data
+        $cmd -> bindParam(':userId', $userId, PDO::PARAM_INT);
         $cmd -> bindParam(':username', $username, PDO::PARAM_STR, 50);
         $cmd -> bindParam(':password', $passwordHash, PDO::PARAM_STR, 255);
         $cmd -> bindParam(':firstName', $firstName, PDO::PARAM_STR, 50);
         $cmd -> bindParam(':lastName', $lastName, PDO::PARAM_STR, 50);
+
+        // * execute
         $cmd -> execute();
 
-    //* Disconnect
-    $db = null;
+        //* Disconnect
+        $db = null;
 
     //* Confirmation
-    echo '<p>Sucessful admin registration.</p>';
+    echo '<p>Sucessful user update.</p>';
 }
 catch (Exception $err) {
     header('location:error.php');
@@ -81,11 +75,10 @@ catch (Exception $err) {
 
 // * Username: monday@gc.ca, tuesday@gc.ca, wednesday@gc.ca
 // * PW: Test123456
-
+}
+include('shared/footer.php');
 ?>
 </main>
 </body>
-<?php
-include('shared/footer.php');
-?>
+
 </html>

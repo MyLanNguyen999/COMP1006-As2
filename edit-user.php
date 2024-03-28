@@ -43,7 +43,7 @@ if(is_numeric($userId)) {
 ?>
 <h2> Edit User </h2>
 <div class="edit-user">
-    <form method="post" action="save-registration.php" >
+    <form method="post" action="update-user.php" >
             <label for="username">Username: *</label>
             <input name="username" id="username" required value="<?php echo $username; ?>" />
             </br>
@@ -57,15 +57,15 @@ if(is_numeric($userId)) {
         
             
 
-        <!-- <fieldset>
+        
         <label for="password">New Password: *</label>
         <input type="password" name="password" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" /> <img id="showHide" src="img/show.png" alt="Show/Hide" onClick = "togglePassword();"/>
-        </fieldset>
+        </br>
 
-        <fieldset>
+        
         <label for="confirm">Confirm New Password: *</label>
         <input type="password" name="confirm" id="confirm" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeyup = "return comparePasswords();"/> <span id="pwErr"></span>
-        </fieldset> -->
+        
 
         <!-- //* hidden value for userId -->
         <input type="hidden" name="userId" value="<?php echo $userId; ?>"/>

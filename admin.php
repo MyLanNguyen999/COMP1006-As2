@@ -27,6 +27,8 @@ echo '<h2> User List </h2>';
 echo 
     '<table>
         <thead>
+            <th> First Name </th>
+            <th> LastName </th>
             <th> Users </th>';
             if (!empty($_SESSION['username'])){
                 echo'<th> Edit </th> ';
@@ -38,6 +40,10 @@ echo
     foreach ($users as $user){
         echo 
             '<tr>
+                <td> ' . $user['firstName'] . '
+                </td>
+                <td> ' . $user['lastName'] . '
+                </td>
                 <td> ' . $user['username'] . ' </td>
                 <td> 
                     <a href="edit-user.php?userId='.$user['userId'].' "> Edit </a> 
@@ -47,9 +53,6 @@ echo
                     <a href="delete-user.php?userId='.$user['userId'].' " onclick="return confirmDelete();"> Delete </a> 
                 </td>
             ';
-                
-            
-        
     }
     echo '</tr>';
     echo '</table>';
