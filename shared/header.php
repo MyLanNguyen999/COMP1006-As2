@@ -9,25 +9,21 @@
 </head>
 <body>
     <header>
+
         <?php
         include('./get-logo-path.php');
         ?>
-        <!-- <h1> COMP 1006 - As2 </h1> -->
-    </header>
     
-    <ul>
-        <!-- <li> 
-            <a href="register.php"> Register </a>
-        </li> -->
-        <?php
-            // * only call session start if it is not called before
-            if (session_status() == PHP_SESSION_NONE) {
-              session_start();
-            }
-        ?>
-        
+        <ul>
             <?php
+                // * only call session start if it is not called before
+                if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+                }
+            ?>
             
+            <?php
+            echo '<div class="nav-bar">';
             if (!empty($_SESSION['username'])) {
                 echo 
                     '<li>
@@ -40,14 +36,14 @@
 
                     include ('list-page.php');
 
-                   echo '<li>
+                echo '<li>
                         <a href="logout.php">Logout</a>
                     </li>
 
                     <li>
                         <a href="#">' . $_SESSION['username'] . '</a>
                     </li>';
-             }
+            }
             else {
                 echo 
                     '<li>
@@ -65,6 +61,8 @@
                     </li>
                     ';
             }
+            echo '</div>';
             ?>
-    </ul>    
+        </ul> 
+    </header>   
 <main>

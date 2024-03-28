@@ -4,22 +4,29 @@ include('shared/header.php');
 ?>
 
 <h1> Control Panel </h1> 
-   
-<li>
-    <a href="admin.php"> Administrators </a>
-</li>
 
-<li>
-    <a href="pages.php"> Pages </a>
-</li>
-
-<li>
-    <a href="upload-logo.php"> Logo </a>
-</li>
-
-<li>
-    <a href="#"> Public Site </a>
-</li>
+<div class="control-panel">
+    
+    <table>
+        <tbody>
+            <tr>
+                <td><a href="admin.php"> Administrators </a></td>
+            </tr>
+            <tr>
+                <td><a href="pages.php"> Pages </a></td>
+            </tr>
+            <tr>
+                <td> <a href="upload-logo.php"> Logo </a></td>
+            </tr>
+            <tr>
+                <td><a href="index.php"> Public Site </a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 </main>
 </body>
+<?php
+include('shared/footer.php');
+?>
 </html>

@@ -21,9 +21,11 @@ $pageId = $_GET['pageId'];
         include('shared/header.php');
         echo '<h2>' . $page['title'] . '</h2>';
         echo '<p>' . $page['content'] . '</p>';
+        include('shared/footer.php');
     } else {
         include('shared/header.php');
         echo '<p>Page not found</p>';
+        include('shared/footer.php');
     }
 
 

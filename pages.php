@@ -21,7 +21,7 @@ catch (Exception $err) {
 }
 // * show the pages
 echo '<h2> Pages </h2>';
-echo '<h4> <a href="add-page.php"> Add new page </a> </h4>';
+echo '<h3> <a href="add-page.php"> Add new page </a> </h3>';
 // * formar the pages into table
 echo   
     '<table>

@@ -3,28 +3,42 @@
     box-sizing: border-box;
 }
 html {
-    width: 40%;
     margin: 0 auto;
 }
 body {
+    margin: 0;
+}
+h1, h2, h3, h4 {
+    text-align: center;
+    color: #124D4B;
+}
 
+label, input {
+    margin: 5px;
+}
+p{
+    text-align: center;
 }
 table {
-    width: 100%;
-    border: 1.5px solid #59A673;
+    width: 60%;
+    border: 1.5px solid #124D4B;
     margin: 0 auto;
     text-align: left;
 }
 
 thead {
-    background-color: #59A673;
+    background-color: #124D4B;
     color: white;
 }
 
 td {
     border: 1px solid lightgrey;
 }
-
+/* * control-panel.php */
+.control-panel {
+    width: 70%;
+    margin: 0 auto;
+}
 /* * add-page.php */
 .newPage {
     width: 80%;
@@ -34,12 +48,52 @@ td {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: rgb(222, 222, 222);
 }
 #logo {
     height: 80px;
 }
-
+/* * login.php */
+.login-form {
+    text-align: center;
+}
+/* * register.php */
+.register-form {
+    display: flex;
+    /* text-align: center; */
+    justify-content: space-around;
+}
+.register-form button {
+    text-align: center;
+}
+.register-form label {
+    text-align: left;
+}
 /* * Nav Style */
+.nav-bar {
+    display: flex;
+}
+.nav-bar li {
+    background-color: #124D4B;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px grey;
+}
+.nav-bar li a {
+    color: white;
+    text-decoration: none;
+}
 li {
     list-style: none;
+}
+/* *Footer */
+footer {
+    background-color: rgb(222, 222, 222);
+    color: #124D4B;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    font-weight: bold;
 }

@@ -10,29 +10,23 @@
     }
     ?>
 
-  <h5>Please enter your credentials.</h5>
-
+  <h4>Please enter your credentials.</h4>
+  <div class="login-form">
   <form method="post" action="validate.php">
-
-    <fieldset>
-
+    
       <label for="username">Username:</label>
 
       <input name="username" id="username" required type="email" placeholder="email@email.com" />
-
-    </fieldset>
-
-    <fieldset>
-
+      </br>
       <label for="password">Password:</label>
-
       <input type="password" name="password" id="password" required  />
-
-    </fieldset>
-
+  </br>
     <button>Login</button>
-
   </form>
+</div>
 </main>
 </body>
+<?php
+include('shared/footer.php');
+?>
 </html>
