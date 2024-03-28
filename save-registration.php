@@ -1,6 +1,6 @@
 <?php
 $title = 'Save Registration';
-include ('shared.header.php');
+include ('shared/header.php');
 
 //* Capture form inputs
 $firstName = $_POST['firstName'];
@@ -26,8 +26,8 @@ $ok = true;
     }
 
     // * make sure the pw is more than 8-char long
-    if (strlen(password) < 8) {
-        echo '8-char password is required </br>';
+    if (strlen($password) < 8) {
+        echo '8-char password is required</br>';
         $ok = false;
     }
 
