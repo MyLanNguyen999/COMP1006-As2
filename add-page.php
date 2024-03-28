@@ -19,3 +19,6 @@ include('shared/header.php');
         <button> Save Content </button>
     </form>
 </section>
+<?php
+include('shared/footer.php');
+?>

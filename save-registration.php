@@ -70,7 +70,7 @@ try {
     $db = null;
 
     //* Confirmation
-    echo 'Sucessful admin registration.';
+    echo '<p>Sucessful admin registration.</p>';
 }
 catch (Exception $err) {
     header('location:error.php');
@@ -83,4 +83,7 @@ catch (Exception $err) {
 ?>
 </main>
 </body>
+<?php
+include('shared/footer.php');
+?>
 </html>

@@ -45,7 +45,7 @@ if ($ok == true){
         $db = null;
 
         // * message on screen
-        echo 'Page Updated.';
+        echo '<p>Page Updated.</p>';
     }
     catch (exception $err) {
             header('location:error.php');
@@ -55,4 +55,7 @@ if ($ok == true){
 ?>
 </main>
 </body>
+<?php
+include('shared/footer.php');
+?>
 </html>

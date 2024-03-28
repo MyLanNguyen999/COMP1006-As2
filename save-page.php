@@ -42,7 +42,7 @@ try {
     // * disconnect db
     $db = null;
     // * confirmation on screen
-    echo 'Your content has been saved.';
+    echo '<p>Your content has been saved.</p>';
 }
 catch (Exception $err) {
     header('location:error.php');
@@ -51,4 +51,7 @@ catch (Exception $err) {
 ?>
 </main>
 </body>
+<?php
+include('shared/footer.php');
+?>
 </html>

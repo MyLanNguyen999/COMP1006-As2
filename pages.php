@@ -55,3 +55,6 @@ echo
 // * disconnect db
 $db = null;
 ?>
+<?php
+include('shared/footer.php');
+?>

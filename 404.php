@@ -6,4 +6,7 @@
 <p> The item you requested does not exist. </p>
 </main>    
 </body>
+<?php
+include('shared/footer.php');
+?>
 </html>

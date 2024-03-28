@@ -58,3 +58,6 @@ echo
 $db = null;
 
 ?>
+<?php
+include('shared/footer.php');
+?>

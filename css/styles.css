@@ -81,8 +81,12 @@ header {
     justify-content: space-around;
 }
 .edit-page-form textarea {
-    background-color: blue;
     text-align: left;
+}
+/* * upload-logo.php */
+.upload-logo {
+    display: flex;
+    justify-content: space-around;
 }
 /* * Nav Style */
 .nav-bar {

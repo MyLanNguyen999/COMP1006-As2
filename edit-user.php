@@ -75,4 +75,7 @@ if(is_numeric($userId)) {
 </div>
 </main>
 </body>
+<?php
+include('shared/footer.php');
+?>
 </html>

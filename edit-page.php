@@ -56,3 +56,6 @@ if(is_numeric($pageId)) {
 </form>
 
 </section>
+<?php
+include('shared/footer.php');
+?>

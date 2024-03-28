@@ -6,4 +6,7 @@
 <p> Please click Back in Browser to retry. </p>
 </main>    
 </body>
+<?php
+include('shared/footer.php');
+?>
 </html>
