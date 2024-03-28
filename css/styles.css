@@ -41,7 +41,8 @@ td {
 }
 /* * add-page.php */
 .newPage {
-    width: 80%;
+    display: flex;
+        justify-content: space-around;
 }
 
 /* * logo in header.php */
@@ -61,13 +62,26 @@ header {
 /* * register.php */
 .register-form {
     display: flex;
-    /* text-align: center; */
     justify-content: space-around;
 }
 .register-form button {
     text-align: center;
 }
 .register-form label {
+    text-align: left;
+}
+/* * edit-user.php */
+.edit-user {
+    display: flex;
+        justify-content: space-around;
+}
+/* * edit-page.php */
+.edit-page-form {
+    display: flex;
+    justify-content: space-around;
+}
+.edit-page-form textarea {
+    background-color: blue;
     text-align: left;
 }
 /* * Nav Style */

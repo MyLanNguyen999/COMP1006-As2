@@ -42,17 +42,20 @@ if(is_numeric($userId)) {
 
 ?>
 <h2> Edit User </h2>
-    <form method="post" action="save-registration.php">
-        <fieldset>
-            <label for="firstName">First Name: *</label>
-            <input name="firstName" id="firstName" required value="<?php echo $firstName; ?>" />
-            <label for="lastName">Last Name: *</label>
-            <input name="lastName" id="lastName" required value="<?php echo $lastName; ?>"/>
-        </fieldset>
-        <fieldset>
+<div class="edit-user">
+    <form method="post" action="save-registration.php" >
             <label for="username">Username: *</label>
             <input name="username" id="username" required value="<?php echo $username; ?>" />
-        </fieldset>
+            </br>
+
+            <label for="firstName">First Name: *</label>
+            <input name="firstName" id="firstName" required value="<?php echo $firstName; ?>" />
+            </br>
+            <label for="lastName">Last Name: *</label>
+            <input name="lastName" id="lastName" required value="<?php echo $lastName; ?>"/>
+            </br>
+        
+            
 
         <!-- <fieldset>
         <label for="password">New Password: *</label>
@@ -66,8 +69,10 @@ if(is_numeric($userId)) {
 
         <!-- //* hidden value for userId -->
         <input type="hidden" name="userId" value="<?php echo $userId; ?>"/>
+        </br>
         <button> Confirm</button>
     </form>
+</div>
 </main>
 </body>
 </html>

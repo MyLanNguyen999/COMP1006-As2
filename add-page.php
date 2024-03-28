@@ -15,7 +15,7 @@ include('shared/header.php');
         <label for="content"> Content: * </label>
         </br>
         <textarea name="content" id="content" required rows="10" cols="60"> </textarea>
-        
+        </br>
         <button> Save Content </button>
     </form>
 </section>

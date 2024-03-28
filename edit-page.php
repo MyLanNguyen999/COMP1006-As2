@@ -39,7 +39,7 @@ if(is_numeric($pageId)) {
 ?>
 <h2> Edit Page </h2>
 
-<section class="newPage">
+<section class="edit-page-form">
     <form method="post" action="update-page.php">
         <label for="title"> Title: * </label>
         <input name="title" id="title" required value="<?php echo $title; ?>"/>
@@ -51,6 +51,7 @@ if(is_numeric($pageId)) {
         </textarea>
         <!-- //* hidden value for pageId -->
         <input type="hidden" name="pageId" value="<?php echo $pageId; ?>"/>
+        </br>
         <button> Save Content </button>
 </form>
 
