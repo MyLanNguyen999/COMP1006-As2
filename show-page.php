@@ -26,7 +26,7 @@ try {
             $content = $page['content'];
             include('shared/header.php');
             echo '<h2>' . $title . '</h2>';
-            echo '<p>' . $content . '</p>';
+            echo '<div class="pageContent"><p>' . $content . '</p></div>';
             include('shared/footer.php');
         } else {
             include('shared/header.php');

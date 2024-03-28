@@ -88,6 +88,11 @@ header {
     display: flex;
     justify-content: space-around;
 }
+/* * show-page.php */
+.pageContent {
+    text-align: center;
+    margin: 5px;
+}
 /* * Nav Style */
 .nav-bar {
     display: flex;

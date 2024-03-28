@@ -67,6 +67,7 @@ try {
 
     //* Confirmation
     echo '<p>Sucessful user update.</p>';
+    echo '<p> <a href="admin.php"> Back to User List </a></p>';
 }
 catch (Exception $err) {
     header('location:error.php');
