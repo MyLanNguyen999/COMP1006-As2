@@ -34,6 +34,12 @@ thead {
 td {
     border: 1px solid lightgrey;
 }
+/* * index.php */
+#homeImage {
+    width: 35%;
+    display: block;
+    margin: 0 auto;
+}
 /* * control-panel.php */
 .control-panel {
     width: 70%;
