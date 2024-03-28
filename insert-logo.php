@@ -61,7 +61,8 @@ try {
     $db = null;
 
     // * message on screen
-    echo '</br> New Logo Saved';
+    echo '<p> New Logo Saved </p>';
+    echo '<p> <a href="index.php"> Back to Home </a> </p>';
     // echo '<img src="./img/uploads/'.$finalName.'" alt="logo" id="logo">';
     // $newLogo = '<img src="./img/uploads/'.$finalName.'" alt="logo" id="logo">';
     // echo '</br> <a href="control-panel.php"/> Control Panel </a> </br>';
