@@ -102,6 +102,7 @@ header {
 /* * Nav Style */
 .nav-bar {
     display: flex;
+    overflow: hidden;
 }
 .nav-bar li {
     background-color: #124D4B;
@@ -128,3 +129,4 @@ footer {
 }
 
 /* * start the project for COMP 1054 - CSS */
+

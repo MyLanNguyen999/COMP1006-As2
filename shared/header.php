@@ -26,7 +26,9 @@
             echo '<div class="nav-bar">';
             if (!empty($_SESSION['username'])) {
                 echo 
-                    '<li>
+                    '
+                    
+                    <li>
                         <a href="index.php"> Home </a>
                     </li>
                     
@@ -46,22 +48,27 @@
             }
             else {
                 echo 
-                    '<li>
-                            <a href="index.php"> Home </a>
-                    </li>';
+                    '
+                        
+                        <li>
+                                <a href="index.php"> Home </a>
+                        </li>';
 
                 include ('list-page.php');
+        
                 
-                echo '<li>
+                echo '
+                    
+                    <li>
                     <a href="register.php">Register</a>
                     </li>
 
                     <li>
                         <a href="login.php">Login</a>
-                    </li>
-                    ';
+                    </li>';
             }
             echo '</div>';
+            
             ?>
         </ul> 
     </header>   
